@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>Analytics home</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	{% load static %}
+	<link rel="stylesheet" href="{% static 'ezraWeb/css/bootstrap.css' %}" type="text/css">
+	<link rel="stylesheet" href="{% static 'ezraWeb/css/custom.css' %}" type="text/css">
+</head>
+<body>
+    <style type="text/css">
+        #carousel-container {
+            background-image: url({% static 'ezraWeb/images/grey.png'%});
+        }
+        body{
+            background-color: #B8CCEA;
+        }
+    </style>
+<!--navbar initialisation -->
+<div class="row">
+ <nav class="navbar navbar-inverse" id="nav-top">
+ <div class="container">
+        <!--div class="text-info"><h4>Chirii Empire Here Just Bootstrap </h4></div-->
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="navbar-collapse">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+        </button> 
+        <div class="navbar-brand" href="#">Shop Adviser </div>
+        <div class="navbar-text" style="color:cyan;padding-left: 100px;">{{today}}&nbsp&nbsp&nbsp &nbsp&nbsp&nbsp 
+           {% if user.is_authenticated %}
+          <p class="text-success pull-right">Welcome, {{ user.username }}.</p>
+           {% else %}
+          <p class="text-success pull-right">Welcome, new user. Please log in.</p>
+           {% endif %}
+
+        </div>
+        <div class=" collapse navbar-collapse ">
+            <ul class="nav navbar-nav navbar-right">
+                <li class="active"><a href="#"><span class="glyphicon glyphicon-home glyphicon-white"></span>&nbsp&nbsp&nbsp Home</a></li
+>
+                 <li><a href="/about">About</a></li>
+                 <li><a href="/analytics">Analytics</a></li>
+                 
+                 
+                 
+                 <li class="dropdown">
+                     <a href="#" class="dropdown-toggle" data-toggle="dropdown"><span class=" glyphicon glyphicon-user "  ></span>&nbsp&nbsp {{ user.username }}<b class="caret"></b></a>
+                 <ul class="dropdown-menu">
+                     
+                     <li ><a href="accounts/logout"><span class="glyphicon glyphicon-log-in"></span> &nbsplogout</a></li>
+                    
+                      
+                 </ul>
+                 </li>
+                 
+                 
+                 
+                
+            </ul>
+        </div>
+
+        </div></nav>
+        </div>
+
+ <div class="container">
+    <h4 class="page-header" style="text-align: center;text-transform: capitalize;">Welcome to the ShopAdviser web application ready to explore our content.</h4>
+  <div class="container" id="carousel-container">
+         <div id="myCarousel" class="carousel slide" data-ride="carousel" data-interval=3000>
+             <!--indicators -->
+             <ol class="carousel-indicators">
+                 <li data-target="myCarousel" data-slide-to="0" class="active"></li>
+                 <li data-target="myCarousel" data-slide-to="1"></li>
+                 <li data-target="myCarousel" data-slide-to="2"></li>
+             </ol>
+             <!--wrapper for the slides -->
+             <div class="carousel-inner">
+                 <div class="item active">
+                     <img src="{% static 'ezraWeb/images/carousel/apple-iphone-smartphone-desk.jpg'%}">
+                     <div class="carousel-caption">
+                         <h3></h3>
+                       <p class="text-info">Explore the site</p>
+                     </div>
+                 </div>
+                 <div class="item" >
+                     <img src="{% static 'ezraWeb/images/carousel/pexels-photo-454699.jpeg'%}" width="100%">
+                     <div class="carousel-caption">
+                         
+                         <p class="text-info">Explore the site</p>
+                     </div>
+                 </div>
+                 <div class="item">
+                     <img src="{% static 'ezraWeb/images/carousel/acer_aspire_switch_12_s.jpg'%}">
+                     <div class="carousel-caption">
+                       <p class="text-info">Explore the site</p>
+                     </div>
+                 </div>
+                 <div class="item">
+                     <img src="{% static 'ezraWeb/images/carousel/pexels-photo%20%281%29.jpg'%}">
+                     <div class="carousel-caption">
+                         <p class="text-info">Explore the site</p>
+                     </div>
+                 </div>
+             </div>
+              <!--controls...-->
+         <a class="left carousel-control" href="#myCarousel" data-slide="prev">
+             <span class="glyphicon glyphicon-chevron-left"></span>
+         </a>
+         <a class="right carousel-control" href="#myCarousel" data-slide="next">
+             <span class="glyphicon glyphicon-chevron-right"></span>
+         </a>
+         </div>
+         </div>
+     <div class="container">
+         <p style="margin-left:;text-indent: 10px;font-family: calisto MT;color: black;">
+         Online shopping is a fun experience and most of us do enjoy them and at one point in our lives we must have surfed the internet either on social media or visiting your companies web portals.Internet offer alot of services among them e-commerce where items with attached prices are displayed.Prices vary from store to store therefore there is need for every shopper to be aware of that.Also most sites partner directly with the product manufacturers inorder to benefit their clients fully.There is need therefore for one to crawl the web inorder for them to get the best out of them.This application therefore carries off that burden from your shoulders and do the scraping on your behalf.It analyses the data and gives you the feedback realtime.Lets dive in &nbsp&nbsp&nbsp&nbsp <a  href="/analytics" style="color:white;background-color:blue;font-weight:bold;font-size: 1.8em;padding-top:0px;font-family: algerian;"> Continue</a></p>
+     </div>
+     </div>
+ 
+
+<nav class="navbar navbar-default " style="background-color: darkslategray;">
+            <div class="container"  >
+            <p class="navbar-text pull left" style="color: #080808">&copy Chirii Softwares<sup>2017</sup><img class="img-rounded" src="{% static 'ezraWeb/images/chirchircp.png'%}" width="50px" height="50px" alt="chiriicp"></p>
+            <div class=" navbar-text pull-left" style="padding-top:40px;padding-left: 10px;"><a href="#">Twitter|</a><a href="#">Facebook|</a><a href="#">GooglePlus</a> &nbsp&nbsp&nbsp &nbsp&nbsp&nbsp
+             <span class="text-danger">Copyrighted content!</span>
+             </div>
+            </div>
+        </nav>
+
+<!--Js plugins for Jquery and Javascript-->
+<script type="text/javascript" src="{% static 'ezraWeb/js/jquery-3.2.1.min.js' %}"></script>
+<script type="text/javascript" src="{% static 'ezraWeb/js/bootstrap.js' %}"></script>
+
+</body>
+</html>

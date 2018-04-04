@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Content of the pdf </title>
+	{% load static %}
+</head>
+<style type="text/css">
+	*{background-color:white;
+		text-align: center;
+	
+font-size: 1.2em;
+
+}
+h2{
+	text-decoration: underline;
+	text-transform: capitalize;
+	color:blue;
+}
+tr{
+	font-size: 1.0em;
+}
+td{
+	font-size:1.0em;
+	padding-top: 3px;
+}
+table {
+	width: 60%;
+	border:2px solid grey;
+	color: black;
+}
+footer {
+	font-size: 1.2em;
+	color: black;
+	font-family: algerian;
+}
+</style>
+<body>
+	<h2>Online Shopping Decision Support System</h2><date style="text-align: right;color:slategrey;">{{date}}</date>
+	<h4 style="">{{query}}</h4>
+	<p>Thank you for using our web based system.Here is the pdf version of the analytics</p>
+	<table>
+		<tr><td>ONLINE SHOP</td><td>AVECHI.CO.KE</td><td>KILLMALL.CO.KE</td><td>JUMIA.CO.KE</td></tr>
+		<tr><td>PRICE IN KSHS.</td><td>{{dict.avechi}}</td><td>{{dict.killmall}}</td><td>{{dict.jumia}}</td></tr>
+	</table>
+	
+
+
+</body><br><br>
+<footer>&copy chirii softwares 2017</footer>
+</html>

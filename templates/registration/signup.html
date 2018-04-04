@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+{% extends 'includes/footer.html'%}
+{% block content%}
+<html lang="en">
+<head>
+	<title>Analytics home</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	{% load static %}
+	<link rel="stylesheet" href="{% static 'ezraWeb/css/bootstrap.css' %}" type="text/css">
+	<link rel="stylesheet" href="{% static 'ezraWeb/css/custom.css' %}" type="text/css">
+</head>
+<body>
+<style type="text/css">
+  body {
+    background-image: url({% static 'ezraWeb/images/'%});
+    background-repeat: no-repeat;
+    background-color: #EEE8EE;
+    background-position: center;
+  }
+  form {
+    color:blue;
+    background-color: 
+  }
+</style>
+<!--navbar initialisation -->
+<div class="row">
+ <nav class="navbar navbar-inverse navbar-fixed-top" id="nav-top">
+ <div class="container">
+        <!--div class="text-info"><h4>Chirii Empire Here Just Bootstrap </h4></div-->
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="navbar-collapse">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+        </button> 
+        <div class="navbar-brand" href="#">Shop Adviser </div>
+        <div class="navbar-text" style="color:black;padding-left: 100px;">{{today}}</div>
+        <div class=" collapse navbar-collapse ">
+            <ul class="nav navbar-nav navbar-right">
+                <li class="active"><a href="#"><span class="glyphicon glyphicon-home glyphicon-white"></span>&nbsp&nbsp&nbsp Home</a></li
+>
+                 <li><a href="/About">About</a></li>
+                 
+                 
+                 <li class="dropdown">
+                     <a href="#" class="dropdown-toggle" data-toggle="dropdown"><span class=" glyphicon glyphicon-user "  ></span>&nbsp&nbspAccount<b class="caret"></b></a>
+                 <ul class="dropdown-menu">
+                     
+                     <li ><a href="/login"><span class="glyphicon glyphicon-log-in"></span> &nbspLogin</a></li>
+                     
+                      
+                 </ul>
+                 </li>
+
+                 
+                 
+                 
+                
+            </ul>
+        </div>
+
+        </div></nav>
+        </div><br></body><br>
+        <div class="form-group" id="signup-form">
+        <h2>Sign up</h2>
+  <form method="post" >
+    {% csrf_token %}
+    {% for field in form %}
+      <p>
+        {{ field.label_tag }}<br>
+        {{ field }}
+        {% if field.help_text %}
+          <small class="text-info">{{ field.help_text }}</small>
+        {% endif %}
+        {% for error in field.errors %}
+          <p class="text-danger">{{ error }}</p>
+        {% endfor %}
+      </p>
+    {% endfor %}
+    <button type="submit" class="btn btn-success" id="btn-signup">Sign up</button>
+  </form>
+  </div>
+
+ 
+
+
+<!--Js plugins for Jquery and Javascript-->
+<script type="text/javascript" src="{% static 'ezraWeb/js/jquery-3.2.1.min.js' %}"></script>
+<script type="text/javascript" src="{% static 'ezraWeb/js/bootstrap.js' %}"></script>
+
+</body>
+</html>{% endblock%}

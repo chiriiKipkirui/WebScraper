@@ -1,0 +1,8 @@
+Python 3.4.4
+Pillow
+django_easy_pdf
+Requests
+Beautiful Soup
+Bootstrap3.7
+Matplotlib
+Numpy

@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+
+{% extends 'includes/footer.html'%}
+{% load static %}
+
+<body>{% block content%}
+<html lang="en">
+<head>
+	<title>Analytics home</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	
+	<link rel="stylesheet" href="{% static 'ezraWeb/css/bootstrap.css' %}" type="text/css">
+	<link rel="stylesheet" href="{% static 'ezraWeb/css/custom.css' %}" type="text/css">
+</head>
+<style type="text/css">
+    #loginform {
+        background-image: url({% static 'ezraWeb/images/F8-wallpaper-day.png' %});
+        color:black;
+    }
+    body {
+        background-color:rgb(194, 237, 234);
+        
+    }
+    label {
+        color:white;
+    }
+</style>
+
+<!--navbar initialisation -->
+<div class="row">
+ <nav class="navbar navbar-default navbar-fixed-top" id="nav-top">
+ <div class="container">
+        <!--div class="text-info"><h4>Chirii Empire Here Just Bootstrap </h4></div-->
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="navbar-collapse">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+        </button> 
+        <div class="nav navbar-nav" href="#"><img class="img-rounded" src="{% static 'ezraWeb/images/shop.png'%}" width="70px" height="50px" alt="shop" style="padding-right: 20px;"></div>
+        <div class="navbar-brand" href="#">Shop Adviser </div>
+        <div class="navbar-text" id="today_tag">{{today}}</div>
+        <div class=" collapse navbar-collapse ">
+            <ul class="nav navbar-nav navbar-right">
+                <li class="active"><a href="#"><span class="glyphicon glyphicon-home glyphicon-white"></span>&nbsp&nbsp&nbsp Home</a></li
+>
+                 <li><a href="/accounts/login">About</a></li>
+
+                 
+                 
+                 
+                 
+                 
+                 
+                
+            </ul>
+        </div>
+
+        </div></nav>
+        </div><br><br><br>
+<div class="form-group" id='loginform'>
+<h2 style="color:white;text-align:center;">Please Login</h2>
+
+<form method="post" class="form-group">
+    {% csrf_token %}
+    {{ form.as_p }}
+  <button id ="login_button" class="btn btn-success text-center" type="submit">Login</button>
+    <span class="hidden" name='next' value="/mainapp/home'"></span>
+</form>
+<a class="" href="/accounts/passwordreset" style="color: black;">Forgot password</a>
+<a class="" href="/accounts/signup" style="color: black;">Create Account</a>
+</div>
+<br><br>
+
+
+         
+
+
+
+
+
+<!--Js plugins for Jquery and Javascript-->
+<script type="text/javascript" src="{% static 'ezraWeb/js/jquery-3.2.1.min.js' %}"></script>
+<script type="text/javascript" src="{% static 'ezraWeb/js/bootstrap.js' %}"></script>
+
+</body>
+{% endblock%}
+
+</html>
